@@ -5,60 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .blog-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .blog-item {
-      background: white;
-      border-radius: var(--radius);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px #0001;
-    }
-    
-    .blog-item h3 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-    
-    .blog-date {
-      color: #6b7280;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    
-    .blog-preview {
-      margin-bottom: 1rem;
-    }
-    
-    .read-more {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    
-    .read-more:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
-
+    
 <body>
-  <header class="site-header">
-    <div class="header-content">
-      <h1>My rabbit-holes</h1>
-      <img class="sphinx" src="./images/sphinx-250.jpg" alt="me">
-    </div>
-    <nav class="main-nav">
+  <header class="top-header">
+    <nav class="top-nav">
       <ul>
-        <li><a href="main.html#about">About</a></li>
-        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="/index.html">About</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
       </ul>
     </nav>
+  </header>
+  <header class="site-header">
+    <div class="header-content">
+    <div class="title-group-blog">
+      <h1>My rabbit holes & thoughts</h1>
+    </div>
+    <img class="sphinx" src="./images/sphinx-250.jpg" alt="me">
+    </div>
   </header>
 
   <section id="blogs">
@@ -66,22 +31,16 @@
     
     <ul class="blog-list">
       <li class="blog-item">
-        <h3 href="blogs/my-life.html" class="read-more">My Life</h3>
-          <!--
-          <span class="blog-date">May 8, 2025</span>
-        <p class="blog-preview">
-          A personal reflection on my journey through life, career achievements, and lessons learned along the way...
-        </p>
-
---> 
-        <a href="blogs/my-life.html" class="read-more">Read More →</a>
+        <a href="posts/ruminations.html" class="blog-item-link">
+          <h4>Ruminations</h4>
+          <span class="blog-date">July 17, 2025</span>
+        </a>
       </li>
-      <!-- More blog posts will be added here -->
     </ul>
   </section>
 
-  <footer>
-    © 2025 Daniel Obolensky • <a href="mailto:you@example.com">Contact</a>
+  <footer class="footer">
+    © 2025 Daniel Obolensky
   </footer>
 </body>
 </html>

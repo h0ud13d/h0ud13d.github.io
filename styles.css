@@ -2,7 +2,12 @@
 :root {
   --accent: #16181d;
   --text: white;
-  --light: #16181d;
+  --bg-main: #16181d;
+  --bg-blog-entry: #1f2126;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --text-muted: #6b7280;
   --radius: 12px;
   font-family:
     ui-sans-serif,
@@ -12,25 +17,31 @@
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
-  color: #16181d;
-  background: var(--light);
+  color: var(--text);
+  background: var(--bg-main);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
 /* Global layout */
-body { margin: 0; }
+body { margin: 0; background: var(--bg-main); }
 h1, h2 { margin: 0 0 0.5rem; }
 section { padding: 3rem 1rem; max-width: 900px; margin: auto; }
 
 /* Link styling */
 a {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: underline;
 }
 
 a:hover {
-color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Header */
@@ -39,7 +50,7 @@ color: rgba(255, 255, 255, 0.9);
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  background: #16181d;
+  background: var(--accent);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
@@ -64,12 +75,6 @@ color: rgba(255, 255, 255, 0.9);
   margin: 0 1rem;
 }
 
-.name-image {
-  display: flex;
-  align-items: center;
-  gap: 1rem;                 /* space between name and image */
-}
-
 .main-nav a {
   text-decoration: none;
   font-weight: 500;
@@ -82,11 +87,18 @@ color: rgba(255, 255, 255, 0.9);
   border-color: var(--accent);
 }
 
-.title-group {
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
+.title-group, .title-group-blog {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
 }
+
+.title-group-blog {
+  max-width: 350px;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
 .subtitle {
   color: var(--text);
   max-width: 350px;
@@ -96,20 +108,23 @@ color: rgba(255, 255, 255, 0.9);
 
 .top-header {
   background: var(--accent);
-  color: white;
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .top-nav ul {
   display: flex;
   list-style: none;
-  margin: 100;
+  margin: 0;
   padding: 0.5rem 1rem;
-  justify-content: center;  /* or flex-start */
+  justify-content: center;
   gap: 2rem;
 }
 
 .top-nav a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
 }
@@ -118,37 +133,191 @@ color: rgba(255, 255, 255, 0.9);
   text-decoration: underline;
 }
 
-.top-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.mainimg {
-  display: block;           /* remove inline gaps */
+.mainimg, .sphinx {
+  display: block;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  /* padding-left: 20px; */ /* ← drop this */
-  margin-left: 20px;        /* ← if you just need horizontal offset */
+  margin-left: 20px;
 }
 
-.sphinx {
-  display: block;          /* no inline-gap */
-  width: 250px;            /* new CSS size */
-  height: 250px;
-  object-fit: cover;      
-  border-radius: 50%;      /* perfect circle */
-  margin-left: 20px;       /* optional offset */
+/* Blog styles */
+.blog-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+.blog-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
 
+.blog-item:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+
+.blog-item h4 {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.blog-item-link {
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-item-link:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.blog-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blog-preview {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: rgba(22, 24, 29, 0.8);
+  text-decoration: none;
+}
+
+/* Contact styles */
+.contact-section {
+  padding: 3rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.contact-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .contact-links {
+    gap: 2rem;
+  }
+  
+  .contact-item {
+    padding: 2rem;
+  }
+}
+
+/* Blog post content styling */
+.blog-container {
+  background: var(--bg-blog-entry);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 10px #0001;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  margin-bottom: 2rem;
+}
+
+.blog-title {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
 
 /* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
   padding: 2rem 1rem;
-  color: #6b7280;
+  background: var(--accent);
+  color: var(--text-muted);
 }
