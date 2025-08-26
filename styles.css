@@ -24,8 +24,8 @@
 }
 
 /* Global layout */
-body { margin: 0; background: var(--bg-main); }
-h1, h2 { margin: 0 0 0.5rem; }
+body { margin: 0; background: var(--bg-main); overflow-y: scroll; }
+h1, h2 { margin: 0 0 0.5rem; font-weight: normal; }
 section { padding: 3rem 1rem; max-width: 900px; margin: auto; }
 section h2 { text-align: left; max-width: 800px; margin: 0 auto 2rem; }
 
@@ -50,7 +50,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   background: var(--bg-main);
 }
 
@@ -95,7 +95,6 @@ a:hover {
 
 .title-group-blog {
   max-width: 350px;
-  margin-top: 3.5rem;
   text-align: left;
   z-index: 10;
   position: relative;
@@ -111,10 +110,14 @@ a:hover {
 }
 
 .title-group-blog code {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: normal;
+}
+
+.title-group {
+  text-align: center;
 }
 
 .subtitle {
@@ -161,39 +164,29 @@ a:hover {
 }
 
 /* Blog styles */
+#blogs {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
 .blog-list {
   list-style: none;
   padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 350px;
+  margin: 0;
 }
 
 .blog-item {
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  background: #f8f8f8;
-  border: 1px solid #e1e4e8;
-  transition: background 0.2s ease;
-}
-
-.blog-item:hover {
-  background: #f0f3f6;
-}
-
-.blog-item h4 {
-  margin-top: 0;
-  margin-bottom: 0.2rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .blog-item-link {
   color: var(--text);
   text-decoration: none;
   display: block;
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  transition: color 0.2s ease;
 }
 
 .blog-item-link:hover {
@@ -202,13 +195,23 @@ a:hover {
 }
 
 .blog-date {
-  color: var(--text-muted);
+  color: var(--text);
   font-size: 0.9rem;
-  margin-bottom: 1rem;
-  display: block;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-weight: normal;
+  display: inline-block;
+  min-width: 120px;
+  margin-right: 2rem;
+  margin-left: 0;
+}
+
+.blog-title {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.blog-item-link:hover .blog-title {
+  color: #000000;
+  text-decoration: underline;
 }
 
 .blog-preview {
@@ -234,15 +237,20 @@ a:hover {
 
 /* Contact styles */
 .contact-section {
-  padding: 3rem 1rem;
   max-width: 700px;
   margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
+  justify-content: center;
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
+.contact-section p {
+  margin-bottom: 2rem;
+}
+
+.contact-section a {
+  display: inline-block;
+  margin: 0 0.25rem;
 }
 
 .contact-item {
