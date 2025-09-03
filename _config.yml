@@ -32,6 +32,13 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Collections
+collections:
+  projects:
+    output: true
+  blog:
+    output: true
+
 # Automatically assign tags by collection/type so we don't edit each post
 defaults:
   # All regular posts get tagged as 'blog'
