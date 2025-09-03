@@ -61,8 +61,6 @@ header_pages:
 
 domain: danielobolensky.me
 url: https://danielobolensky.me
-baseurl: /projects/
-baseurl: /blog/
 
 
 # Exclude from processing.
