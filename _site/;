@@ -3,20 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Hodie non cras | Corner of the internet where I host my projects and thoughts</title>
+<title>If not today, when? | Hodie non cras</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Hodie non cras" />
+<meta property="og:title" content="If not today, when?" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Corner of the internet where I host my projects and thoughts" />
 <meta property="og:description" content="Corner of the internet where I host my projects and thoughts" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/;" />
+<meta property="og:url" content="http://localhost:4000/;" />
 <meta property="og:site_name" content="Hodie non cras" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-03T00:00:00-04:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Hodie non cras" />
+<meta property="twitter:title" content="If not today, when?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Corner of the internet where I host my projects and thoughts","headline":"Hodie non cras","name":"Hodie non cras","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-09-03T00:00:00-04:00","datePublished":"2025-09-03T00:00:00-04:00","description":"Corner of the internet where I host my projects and thoughts","headline":"If not today, when?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/;"},"url":"http://localhost:4000/;"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hodie non cras" /></head>
 <body><header class="site-header" role="banner">
@@ -36,14 +37,20 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div style="display: flex; align-items: flex-start; gap: 32px;">
-  <div style="flex: 1;">
-    <h1>Daniel Obolensky</h1>
-    <p>Hi, I'm a Computer Science student at <a href="https://www.rpi.edu/"><em>RPI</em></a>.</p>
-    <p>I cofounded a <a href="https://candidex.ai">startup</a>, worked as a machine learning engineer for a couple <a href="https://www.linkedin.com/in/danielobolensky/">companies</a>, and have done research on LLMs and robots.</p>
-  </div>
-  <img src="../images/sphinx-250.jpg" alt="me" style="width: 180px; height: auto; flex-shrink: 0; margin-left: 20px;" />
-</div>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">If not today, when?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-09-03T00:00:00-04:00" itemprop="datePublished">Sep 3, 2025
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    The saying > "people overestimate what they can do in a year and underestimate what they can do in a decade" never sat right with me. I believe the range of 2 weeks -> 3 months is enough to become better than 2 standard deviations above the mean on a certain thing. I feel that too many people today are getting [wireheaded](https://www.lesswrong.com/w/wireheading) and struggle with keeping a long mental focus of >2 weeks on a certain project.
+
+  </div><a class="u-url" href="/;" hidden></a>
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
